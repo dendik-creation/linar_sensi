@@ -13,6 +13,5 @@ func _process(_delta: float) -> void:
 	else : 
 		load_splash.value += 0.1
 	if load_splash.value == 100 :
-		timer.start(2)
 		get_tree().change_scene_to_file("res://scenes/home_screen.tscn")
 		
