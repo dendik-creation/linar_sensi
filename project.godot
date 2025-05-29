@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scenes/global/global.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"

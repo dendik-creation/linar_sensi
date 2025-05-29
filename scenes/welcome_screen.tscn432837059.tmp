@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1rf42nk1hbxr"]
+
+[ext_resource type="VideoStream" uid="uid://c88wlfyy0nv1n" path="res://assets/video/welcome.ogv" id="1_uthqw"]
+[ext_resource type="Script" uid="uid://ddpkltl7br0l5" path="res://scripts/welcome_screen.gd" id="2_l7j8c"]
+
+[node name="welcome_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="welcome_gif" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_right = 1734.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_uthqw")
+autoplay = true
+loop = true
+
+[node name="any_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l7j8c")
+
+[connection signal="pressed" from="any_btn" to="any_btn" method="_on_pressed"]
