@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5m7pmmrf26yv"]
+
+[ext_resource type="Script" uid="uid://s3pnbjdyi1ks" path="res://scenes/visual/visual.gd" id="1_325h1"]
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="2_sk3wn"]
+[ext_resource type="Texture2D" uid="uid://dlcetl8xrwcyy" path="res://assets/components/buttons/Tombol Home.png" id="3_jypee"]
+[ext_resource type="Texture2D" uid="uid://1ktg0ldd27st" path="res://assets/partials/images/scenes/visual/materi_1.png" id="4_7fo4s"]
+[ext_resource type="Texture2D" uid="uid://b5ttfwuivuu8b" path="res://assets/components/buttons/Tombol Back.png" id="5_ridoc"]
+[ext_resource type="Texture2D" uid="uid://bgmao3cxddobw" path="res://assets/components/buttons/Tombol Lanjut.png" id="6_aytf1"]
+
+[node name="visual_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_325h1")
+
+[node name="main_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_sk3wn")
+
+[node name="home_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 177.0
+texture_normal = ExtResource("3_jypee")
+
+[node name="ppt_texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.5
+anchor_right = 0.087
+anchor_bottom = 0.5
+offset_left = 7.63998
+offset_top = -424.0
+offset_right = 1585.96
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7fo4s")
+
+[node name="back_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.496
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -858.0
+offset_top = -64.1801
+offset_right = -725.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_ridoc")
+
+[node name="next_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.912
+anchor_top = 0.5
+anchor_right = 0.912
+anchor_bottom = 0.5
+offset_left = -65.0402
+offset_top = -68.0
+offset_right = 67.9598
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_aytf1")
+
+[connection signal="pressed" from="home_btn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="next_btn" to="." method="_on_next_btn_pressed"]

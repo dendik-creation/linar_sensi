@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhv3p16tebscb"]
+
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="1_krot7"]
+[ext_resource type="Script" uid="uid://cqlmbwwxgqudm" path="res://scenes/home/home.gd" id="1_ng36q"]
+[ext_resource type="Texture2D" uid="uid://cup306p81b0y3" path="res://assets/components/buttons/Volume Musik Penuh.png" id="3_vut6t"]
+[ext_resource type="Texture2D" uid="uid://ctxncu71wn4tg" path="res://assets/components/buttons/Tombol Developer.png" id="4_vut6t"]
+[ext_resource type="Texture2D" uid="uid://cwq2btkuevtkm" path="res://assets/components/buttons/Audio_Button.png" id="5_vest7"]
+[ext_resource type="Texture2D" uid="uid://d0sucp2wrfvu0" path="res://assets/components/buttons/Visual_Button.png" id="6_qkv0c"]
+[ext_resource type="Texture2D" uid="uid://dxfx37fc8rvnx" path="res://assets/components/buttons/Projek.png" id="7_0bfbb"]
+[ext_resource type="Texture2D" uid="uid://bddopitcgt8dk" path="res://assets/components/buttons/Kinestik_Button.png" id="8_qkv0c"]
+
+[node name="home_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-669, -359)
+script = ExtResource("1_ng36q")
+
+[node name="main_bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_krot7")
+expand_mode = 3
+
+[node name="music_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -184.0
+offset_top = 32.0
+offset_right = -39.0
+offset_bottom = 178.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_vut6t")
+
+[node name="dev_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -376.0
+offset_top = 32.0
+offset_right = -232.0
+offset_bottom = 177.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_vut6t")
+
+[node name="audio_btn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.071
+anchor_top = 0.319
+anchor_right = 0.354
+anchor_bottom = 0.444
+offset_left = 23.68
+offset_top = -144.52
+offset_right = -9.67999
+offset_bottom = -141.52
+texture_normal = ExtResource("5_vest7")
+
+[node name="visual_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 400.0
+offset_right = 662.0
+offset_bottom = 537.0
+texture_normal = ExtResource("6_qkv0c")
+
+[node name="projek_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 792.0
+offset_right = 666.0
+offset_bottom = 942.0
+texture_normal = ExtResource("7_0bfbb")
+
+[node name="kinestik_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 592.0
+offset_right = 654.0
+offset_bottom = 739.0
+texture_normal = ExtResource("8_qkv0c")
+
+[node name="quit_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 184.0
+offset_bottom = 177.0
+
+[connection signal="pressed" from="music_btn" to="." method="_on_music_btn_pressed"]
+[connection signal="pressed" from="dev_btn" to="." method="_on_dev_btn_pressed"]
+[connection signal="pressed" from="audio_btn" to="." method="_on_audio_btn_pressed"]
+[connection signal="pressed" from="visual_btn" to="." method="_on_visual_btn_pressed"]
+[connection signal="pressed" from="projek_btn" to="." method="_on_projek_btn_pressed"]
+[connection signal="pressed" from="kinestik_btn" to="." method="_on_kinestik_btn_pressed"]

@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://o6trfmedtl4i"]
+
+[ext_resource type="Script" uid="uid://dtxuobi31y0xi" path="res://scenes/audio/audio_podcast.gd" id="1_wcjnh"]
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="2_m3jgl"]
+[ext_resource type="Texture2D" uid="uid://dlcetl8xrwcyy" path="res://assets/components/buttons/Tombol Home.png" id="3_qjeh1"]
+[ext_resource type="AudioStream" uid="uid://ce6wg6lcjmh4n" path="res://assets/audio/long/podcast_gabungan.ogg" id="4_403u5"]
+[ext_resource type="Texture2D" uid="uid://bm7i5i1flqqxa" path="res://assets/partials/images/scenes/audio/podcast_layout.png" id="5_ypg4w"]
+[ext_resource type="Texture2D" uid="uid://6g5p0xi7nt5q" path="res://assets/partials/images/scenes/audio/disc.png" id="6_v1x1b"]
+[ext_resource type="Texture2D" uid="uid://fspm7msmdgjh" path="res://assets/components/buttons/play_btn.png" id="7_3xfiq"]
+[ext_resource type="Texture2D" uid="uid://ojw2rokp6iro" path="res://assets/components/buttons/stop_btn.png" id="8_3xfiq"]
+[ext_resource type="Texture2D" uid="uid://c1y4u5udy8ujr" path="res://assets/components/buttons/pause_btn.png" id="8_403u5"]
+
+[node name="audio_podcast" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcjnh")
+
+[node name="main_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_m3jgl")
+
+[node name="home_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 177.0
+texture_normal = ExtResource("3_qjeh1")
+
+[node name="podcast_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_403u5")
+
+[node name="podcast_layout" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -793.0
+offset_top = -424.0
+offset_right = 793.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ypg4w")
+
+[node name="stop_btn" type="TextureButton" parent="podcast_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.007
+anchor_right = 0.5
+anchor_bottom = 1.007
+offset_left = 128.0
+offset_top = -89.9361
+offset_right = 273.0
+offset_bottom = 55.0638
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_3xfiq")
+
+[node name="pause_btn" type="TextureButton" parent="podcast_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.881
+anchor_right = 0.5
+anchor_bottom = 0.881
+offset_left = -72.5
+offset_top = 16.912
+offset_right = 72.5
+offset_bottom = 161.912
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_403u5")
+
+[node name="play_btn" type="TextureButton" parent="podcast_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.881
+anchor_right = 0.5
+anchor_bottom = 0.881
+offset_left = -272.5
+offset_top = 16.912
+offset_right = -127.5
+offset_bottom = 161.912
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_3xfiq")
+
+[node name="podcast_description" type="Label" parent="podcast_layout"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 92.0
+offset_right = 372.0
+offset_bottom = 115.0
+text = "Ketuk play untuk memutar"
+
+[node name="disc_center" type="TextureRect" parent="podcast_layout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -141.0
+offset_right = 141.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_v1x1b")
+
+[node name="podcast_title" type="Label" parent="podcast_layout"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 52.0
+offset_right = 414.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 28
+text = "Podcast Gabungan"
+
+[connection signal="pressed" from="home_btn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="podcast_layout/stop_btn" to="." method="_on_stop_btn_pressed"]
+[connection signal="pressed" from="podcast_layout/pause_btn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="podcast_layout/play_btn" to="." method="_on_play_btn_pressed"]

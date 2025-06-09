@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2h3qytjygjox"]
+
+[ext_resource type="Script" uid="uid://unajke17w24j" path="res://scenes/about/about.gd" id="1_0y3m8"]
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="1_dfybg"]
+[ext_resource type="Texture2D" uid="uid://dpqbmvet4cged" path="res://assets/partials/images/scenes/about/about.png" id="2_yrcye"]
+[ext_resource type="Texture2D" uid="uid://dlcetl8xrwcyy" path="res://assets/components/buttons/Tombol Home.png" id="3_0y3m8"]
+
+[node name="about_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0y3m8")
+
+[node name="main_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dfybg")
+
+[node name="home_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 177.0
+texture_normal = ExtResource("3_0y3m8")
+
+[node name="about_me" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -742.0
+offset_top = -428.5
+offset_right = 742.0
+offset_bottom = 428.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yrcye")
+
+[connection signal="pressed" from="home_btn" to="." method="_on_home_btn_pressed"]

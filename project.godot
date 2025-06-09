@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="linar_sensi"
 run/main_scene="uid://dw7l3a1shf7em"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://icon.svg"
+config/icon="uid://c0c6eb1umtnvw"
 
 [autoload]
 
@@ -22,9 +22,12 @@ Global="*res://scenes/global/global.tscn"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

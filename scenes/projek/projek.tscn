@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjpqu3lyefy2f"]
+
+[ext_resource type="Script" uid="uid://ckqy0h4oan4p4" path="res://scenes/projek/projek.gd" id="1_i1065"]
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="2_478im"]
+[ext_resource type="Texture2D" uid="uid://dlcetl8xrwcyy" path="res://assets/components/buttons/Tombol Home.png" id="3_m6avk"]
+[ext_resource type="Texture2D" uid="uid://85t2jh3cl6kc" path="res://assets/components/buttons/LITERASI.png" id="4_gt35s"]
+[ext_resource type="Texture2D" uid="uid://deljcgrtqd2vx" path="res://assets/components/buttons/NARASI.png" id="5_1yani"]
+[ext_resource type="Texture2D" uid="uid://op87jlw8j0qf" path="res://assets/components/buttons/PRESENTASI.png" id="6_5331n"]
+
+[node name="Projek" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i1065")
+
+[node name="main_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_478im")
+
+[node name="home_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 177.0
+texture_normal = ExtResource("3_m6avk")
+
+[node name="literasi_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 248.0
+offset_right = 749.0
+offset_bottom = 412.0
+texture_normal = ExtResource("4_gt35s")
+
+[node name="narasi_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 494.0
+offset_right = 753.0
+offset_bottom = 663.0
+texture_normal = ExtResource("5_1yani")
+
+[node name="presentasi_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 748.0
+offset_right = 746.0
+offset_bottom = 910.0
+texture_normal = ExtResource("6_5331n")
+
+[connection signal="pressed" from="home_btn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="literasi_btn" to="." method="_on_literasi_btn_pressed"]
+[connection signal="pressed" from="narasi_btn" to="." method="_on_narasi_btn_pressed"]
+[connection signal="pressed" from="presentasi_btn" to="." method="_on_presentasi_btn_pressed"]

@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=3 uid="uid://clkr2p6t3avsc"]
+
+[ext_resource type="Script" uid="uid://r0u256gvdivc" path="res://scenes/kinestik/kinestik.gd" id="1_be8mq"]
+[ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="2_f54de"]
+[ext_resource type="Texture2D" uid="uid://dlcetl8xrwcyy" path="res://assets/components/buttons/Tombol Home.png" id="3_doe0y"]
+[ext_resource type="Texture2D" uid="uid://c6phxf6tciw5s" path="res://assets/partials/images/scenes/kinestik/video_layout.png" id="4_doe0y"]
+[ext_resource type="Texture2D" uid="uid://ojw2rokp6iro" path="res://assets/components/buttons/stop_btn.png" id="5_u74nb"]
+[ext_resource type="Texture2D" uid="uid://c1y4u5udy8ujr" path="res://assets/components/buttons/pause_btn.png" id="6_lq1ph"]
+[ext_resource type="Texture2D" uid="uid://fspm7msmdgjh" path="res://assets/components/buttons/play_btn.png" id="7_ml7rm"]
+[ext_resource type="VideoStream" uid="uid://c1d3mh5bsnvbm" path="res://assets/video/Teks_LHO_Video.ogv" id="8_f54de"]
+[ext_resource type="Texture2D" uid="uid://cw1o6jsxyb2og" path="res://assets/partials/images/scenes/kinestik/video_border.png" id="9_6d7wp"]
+
+[node name="Kinestik" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_be8mq")
+
+[node name="main_bg" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_f54de")
+
+[node name="home_btn" type="TextureButton" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 177.0
+texture_normal = ExtResource("3_doe0y")
+
+[node name="video_layout" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -793.0
+offset_top = -424.0
+offset_right = 793.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_doe0y")
+
+[node name="stop_btn" type="TextureButton" parent="video_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.007
+anchor_right = 0.5
+anchor_bottom = 1.007
+offset_left = 128.0
+offset_top = -89.9361
+offset_right = 273.0
+offset_bottom = 55.0638
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_u74nb")
+
+[node name="pause_btn" type="TextureButton" parent="video_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.881
+anchor_right = 0.5
+anchor_bottom = 0.881
+offset_left = -72.5
+offset_top = 16.912
+offset_right = 72.5
+offset_bottom = 161.912
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_lq1ph")
+
+[node name="play_btn" type="TextureButton" parent="video_layout"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.881
+anchor_right = 0.5
+anchor_bottom = 0.881
+offset_left = -272.5
+offset_top = 16.912
+offset_right = -127.5
+offset_bottom = 161.912
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_ml7rm")
+
+[node name="video_description" type="Label" parent="video_layout"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 92.0
+offset_right = 372.0
+offset_bottom = 115.0
+text = "Ketuk play untuk memutar"
+
+[node name="video_title" type="Label" parent="video_layout"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 52.0
+offset_right = 414.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 28
+text = "Teks Laporan Hasil Observasi"
+
+[node name="video_source" type="VideoStreamPlayer" parent="video_layout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.5
+offset_top = -279.5
+offset_right = 498.5
+offset_bottom = 279.5
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("8_f54de")
+autoplay = true
+expand = true
+
+[node name="video_border" type="TextureRect" parent="video_layout"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.5
+offset_top = -293.0
+offset_right = 511.5
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_6d7wp")
