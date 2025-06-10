@@ -25,7 +25,6 @@ func _ready() -> void:
 	
 func _on_podcast_finished() -> void:
 	if is_podcast_playing:
-		print("podcast end")
 		is_podcast_playing = false
 		is_paused = false
 		reset_to_initial_state()

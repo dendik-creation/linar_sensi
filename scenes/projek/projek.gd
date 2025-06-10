@@ -3,8 +3,11 @@ extends Control
 @onready var literasi_btn: TextureButton = $literasi_btn
 @onready var narasi_btn: TextureButton = $narasi_btn
 @onready var presentasi_btn: TextureButton = $presentasi_btn
+@onready var projek_bgm: AudioStreamPlayer = $projek_bgm
 
 func _ready() -> void:
+	Global.handle_activate_disabled_bgm("DISABLED")
+	projek_bgm.play()
 	Global.play_initial_animation($home_btn, 0.5, "TOP", 180.0, 0.3)
 	Global.play_initial_animation($literasi_btn, 0.75, "LEFT", 800, 0.5)
 	Global.play_initial_animation($narasi_btn, 0.85, "LEFT", 800, 0.5)
@@ -13,6 +16,7 @@ func _ready() -> void:
 func _on_home_btn_pressed() -> void:
 	Global.play_click_sound()
 	Global.click_animation(home_btn)
+	Global.handle_activate_disabled_bgm()
 	await get_tree().create_timer(0.3).timeout
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/home/home.tscn")

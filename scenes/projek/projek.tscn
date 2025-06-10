@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjpqu3lyefy2f"]
+[gd_scene load_steps=8 format=3 uid="uid://bjpqu3lyefy2f"]
 
 [ext_resource type="Script" uid="uid://ckqy0h4oan4p4" path="res://scenes/projek/projek.gd" id="1_i1065"]
 [ext_resource type="Texture2D" uid="uid://dhodpddj1seer" path="res://assets/partials/images/scenes/home/home_background.png" id="2_478im"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://85t2jh3cl6kc" path="res://assets/components/buttons/LITERASI.png" id="4_gt35s"]
 [ext_resource type="Texture2D" uid="uid://deljcgrtqd2vx" path="res://assets/components/buttons/NARASI.png" id="5_1yani"]
 [ext_resource type="Texture2D" uid="uid://op87jlw8j0qf" path="res://assets/components/buttons/PRESENTASI.png" id="6_5331n"]
+[ext_resource type="AudioStream" uid="uid://b47trm87nm4ox" path="res://assets/audio/long/project_bgm.ogg" id="7_1yani"]
 
 [node name="Projek" type="Control"]
 layout_mode = 3
@@ -53,6 +54,9 @@ offset_top = 748.0
 offset_right = 746.0
 offset_bottom = 910.0
 texture_normal = ExtResource("6_5331n")
+
+[node name="projek_bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1yani")
 
 [connection signal="pressed" from="home_btn" to="." method="_on_home_btn_pressed"]
 [connection signal="pressed" from="literasi_btn" to="." method="_on_literasi_btn_pressed"]
